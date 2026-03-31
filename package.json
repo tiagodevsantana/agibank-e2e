@@ -1,0 +1,17 @@
+{
+  "name": "Agibank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:headed": "cypress run --headed"
+  },
+  "devDependencies": {
+    "cypress": "^15.13.0",
+    "typescript": "^5.5.3"
+  },
+  "private": true
+}
