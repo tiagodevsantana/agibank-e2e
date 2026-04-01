@@ -20,9 +20,28 @@ jobs:
       - name: Instalar dependências
         run: npm install
 
-      - name: Rodar Cypress
-        run: npx cypress run
+      # 🔥 Instalar libs necessárias pro Cypress rodar no CI
+      - name: Instalar dependências do sistema
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgtk2.0-0 \
+            libgtk-3-0 \
+            libgbm-dev \
+            libnotify-dev \
+            libgconf-2-4 \
+            libnss3 \
+            libxss1 \
+            libasound2 \
+            libxtst6 \
+            xauth \
+            xvfb
 
+      # 🔥 Rodar Cypress corretamente (headless real)
+      - name: Rodar Cypress
+        run: xvfb-run npx cypress run --browser chrome
+
+      # 🔥 Baixar histórico anterior (trend)
       - name: Baixar histórico anterior
         uses: actions/checkout@v4
         with:
@@ -30,6 +49,7 @@ jobs:
           path: gh-pages
         continue-on-error: true
 
+      # 🔥 Copiar histórico corretamente
       - name: Copiar histórico
         run: |
           if [ -d gh-pages/history ]; then
@@ -37,8 +57,10 @@ jobs:
             cp -r gh-pages/history/* allure-results/history/
           fi
 
+      # 🔥 Garantir pasta antes de criar executor
       - name: Add executor info
         run: |
+          mkdir -p allure-results
           echo '{
             "name": "GitHub Actions",
             "type": "github",
@@ -46,9 +68,11 @@ jobs:
             "buildUrl": "https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
           }' > allure-results/executor.json
 
+      # 🔥 Gerar relatório Allure
       - name: Gerar Allure Report
         run: npx allure generate allure-results --clean -o allure-report
 
+      # 🚀 Deploy no GitHub Pages
       - name: Deploy GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
