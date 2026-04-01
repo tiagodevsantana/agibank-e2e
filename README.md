@@ -72,6 +72,26 @@ cy.abrirCampoBusca()
 // navega direto para a página de resultados de um termo
 cy.realizarBusca('investimento')
 
+## Relatório de Testes (Allure)
+
+Acesse o relatório atualizado automaticamente:
+
+https://tiagodevsantana.github.io/agibank-e2e/
+
+## Integração Contínua (CI/CD)
+
+Este projeto possui pipeline automatizado com GitHub Actions:
+
+- Execução automática dos testes a cada push
+- Geração de relatório Allure
+- Publicação automática no GitHub Pages
+- Histórico de execuções (trend)
+
+Tecnologias utilizadas:
+- Cypress
+- Allure Report
+- GitHub Actions
+- GitHub Pages
 
 ## Decisões que valem comentar
 
