@@ -1,15 +1,25 @@
 {
-  "name": "Agibank",
+  "name": "agibank-e2e",
   "version": "1.0.0",
-  "description": "",
+  "description": "E2E automation with Cypress + Allure",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:run:headed": "cypress run --headed"
+    "cy:run:headed": "cypress run --headed",
+
+    "test": "cypress run",
+
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+
+    "test:report": "cypress run && npm run allure:generate"
   },
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-commandline": "^2.38.1",
     "cypress": "^15.13.0",
     "typescript": "^5.5.3"
   },

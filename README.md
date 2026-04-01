@@ -32,15 +32,15 @@ Verifica que a página exibe a mensagem de "nenhum resultado" e que nenhum card 
 
 ## Instalação
 
-```bash
-git clone https://github.com/tiagodevsantana/Agibank.git
+bash
+git clone https://github.com/tiagodevsantana/agibank-e2e.git
 cd Agibank
 npm install
-```
+
 
 ## Executando os testes
 
-```bash
+bash
 # abre o Cypress com interface visual — bom para desenvolvimento
 npm run cy:open
 
@@ -49,19 +49,27 @@ npm run cy:run
 
 # roda com navegador visível — útil para debugar falhas
 npm run cy:run:headed
-```
+## Execução dos testes
+
+npm install
+npm run test
+
+## Relatório Allure
+
+npm run test:report
+npm run allure:open
 
 ## Comandos customizados
 
 Dois comandos definidos em `cypress/support/commands.ts`:
 
-```typescript
+typescript
 // abre o campo de busca clicando na lupa
 cy.abrirCampoBusca()
 
 // navega direto para a página de resultados de um termo
 cy.realizarBusca('investimento')
-```
+
 
 ## Decisões que valem comentar
 
@@ -76,4 +84,4 @@ O blog tem scripts de terceiros (Jetpack, LiteSpeed) que disparam erros de JS n�
 
 ---
 
-Desenvolvido por **Tiago Santana** — [github.com/tiagodevsantana](https://github.com/tiagodevsantana/Agibank)
+Desenvolvido por **Tiago Santana** — [github.com/tiagodevsantana](https://github.com/tiagodevsantana/agibank-e2e)
