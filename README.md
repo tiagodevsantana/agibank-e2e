@@ -1,3 +1,5 @@
+![CI](https://github.com/tiagodevsantana/agibank-e2e/actions/workflows/ci.yml/badge.svg)
+
 # Teste Técnico QA – Blog do Agi
 
 Automação dos testes de busca do [Blog do Agi](https://blogdoagi.com.br/), desenvolvida como parte do processo seletivo para a vaga de QA na Agibank.
