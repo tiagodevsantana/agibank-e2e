@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","7305","deve exibir resultados ao buscar por um termo válido","Pesquisa de Artigos – Blog do Agi","2026-04-01","passed","2026-04-01","","CT01 – Busca com termo válido","",""
+"","582","deve redirecionar para a página de resultados","Pesquisa de Artigos – Blog do Agi","2026-04-01","passed","2026-04-01","","CT02 – Busca com termo inválido","",""
+"","454","não deve exibir cards de artigos","Pesquisa de Artigos – Blog do Agi","2026-04-01","passed","2026-04-01","","CT02 – Busca com termo inválido","",""
+"","437","deve exibir mensagem de nenhum resultado encontrado","Pesquisa de Artigos – Blog do Agi","2026-04-01","passed","2026-04-01","","CT02 – Busca com termo inválido","",""
